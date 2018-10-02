@@ -1,4 +1,4 @@
-package cs2340_64b.com.cs2340_project;
+package cs2340_64b.com.cs2340_project.controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import cs2340_64b.com.cs2340_project.OpeningActivity;
+import cs2340_64b.com.cs2340_project.controllers.OpeningActivity;
+import cs2340_64b.com.cs2340_project.R;
+import cs2340_64b.com.cs2340_project.model.LoginServiceFacade;
 
 
 public class UserAreaActivity extends AppCompatActivity {
@@ -31,6 +33,8 @@ public class UserAreaActivity extends AppCompatActivity {
     }
 
     public void onLogoutPressed(View view) {
+        LoginServiceFacade model = LoginServiceFacade.getInstance();
+        model.logout();
         Intent intent = new Intent(this, OpeningActivity.class);
         startActivity(intent);
     }

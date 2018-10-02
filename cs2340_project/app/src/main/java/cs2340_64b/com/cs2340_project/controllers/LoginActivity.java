@@ -1,4 +1,4 @@
-package cs2340_64b.com.cs2340_project;
+package cs2340_64b.com.cs2340_project.controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import cs2340_64b.com.cs2340_project.UserAreaActivity;
+import cs2340_64b.com.cs2340_project.controllers.UserAreaActivity;
+import cs2340_64b.com.cs2340_project.R;
+import cs2340_64b.com.cs2340_project.model.LoginServiceFacade;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -36,25 +38,21 @@ public class LoginActivity extends AppCompatActivity {
         EditText passwordField = findViewById(R.id.password);
         TextView error = findViewById(R.id.error_text);
         error.setText("");
-        if (!(usernameField.getText().toString().equals("user"))) {
-            usernameField.setText("");
-            passwordField.setText("");
-            error.setText("Invalid username. Please try again");
-        } else if (!(passwordField.getText().toString().equals("pass"))) {
-            usernameField.setText("");
-            passwordField.setText("");
-            error.setText("Invalid password. Please try again");
-        } else {
+        LoginServiceFacade model = LoginServiceFacade.getInstance();
+        if (model.doLogin(usernameField.getText().toString(), passwordField.getText().toString())) {
             Intent intent = new Intent(this, UserAreaActivity.class);
             startActivity(intent);
+        } else {
+            usernameField.setText("");
+            passwordField.setText("");
+            error.setText("Invalid username or password Try again");
         }
 
     }
 
     public void onCancelPressed(View view) {
-        //Intent intent = new Intent(this, OpeningActivity.class);
-        //startActivity(intent);
-        finish();
+        Intent intent = new Intent(this, OpeningActivity.class);
+        startActivity(intent);
     }
 
 }
