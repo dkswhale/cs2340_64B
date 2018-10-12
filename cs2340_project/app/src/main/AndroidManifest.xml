@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="cs2340_64b.com.cs2340_project.controllers.OpeningActivity"
+            android:name=".controllers.OpeningActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,17 +20,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cs2340_64b.com.cs2340_project.controllers.LoginActivity"
+            android:name=".controllers.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="cs2340_64b.com.cs2340_project.controllers.UserAreaActivity"
+            android:name=".controllers.UserAreaActivity"
             android:label="@string/title_activity_user_area"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="cs2340_64b.com.cs2340_project.controllers.RegisterActivity"
+            android:name=".controllers.RegisterActivity"
             android:label="@string/title_activity_register"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".controllers.LocationListActivity"></activity>
     </application>
 
 </manifest>
