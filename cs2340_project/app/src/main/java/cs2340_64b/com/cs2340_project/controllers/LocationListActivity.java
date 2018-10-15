@@ -15,7 +15,7 @@ import java.util.List;
 
 import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.Location;
-import cs2340_64b.com.cs2340_project.model.LocationModel;
+import cs2340_64b.com.cs2340_project.model.LoginServiceFacade;
 
 public class LocationListActivity extends AppCompatActivity {
 
@@ -30,7 +30,7 @@ public class LocationListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(LocationModel.INSTANCE.getLocations()));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(LoginServiceFacade.getInstance().getLocations()));
     }
 
     public class SimpleItemRecyclerViewAdapter

@@ -1,5 +1,8 @@
 package cs2340_64b.com.cs2340_project.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginServiceFacade {
 
     private static LoginServiceFacade INSTANCE = new LoginServiceFacade();
@@ -10,10 +13,11 @@ public class LoginServiceFacade {
     }
 
     private UserManager _userManager;
-
+    private List<Location> locations;
 
     private LoginServiceFacade() {
         _userManager = new UserManager();
+        locations = new ArrayList<>();
     }
 
     public User getCurrentUser() {
@@ -48,6 +52,21 @@ public class LoginServiceFacade {
 
     public boolean hasLoggedInUser() {
         return currentUser != null;
+    }
+
+    public void addLocation(Location location) {
+        locations.add(location);
+    }
+
+    public List<Location> getLocations() {
+        return locations;
+    }
+
+    public Location findLocationByKey(int key) {
+        for (Location l : locations) {
+            if (l.getKey() == key) return l;
+        }
+        return null;
     }
 
 }

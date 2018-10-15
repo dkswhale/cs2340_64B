@@ -1,8 +1,6 @@
 package cs2340_64b.com.cs2340_project.controllers;
 
 import android.app.Activity;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
@@ -13,7 +11,7 @@ import android.widget.TextView;
 
 import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.Location;
-import cs2340_64b.com.cs2340_project.model.LocationModel;
+import cs2340_64b.com.cs2340_project.model.LoginServiceFacade;
 
 public class LocationDetailFragment extends Fragment {
     public static final String ARG_LOC_KEY = "item_id";
@@ -29,7 +27,7 @@ public class LocationDetailFragment extends Fragment {
 
         if (getArguments().containsKey(ARG_LOC_KEY)) {
             int item_id = getArguments().getInt(ARG_LOC_KEY);
-            mItem = LocationModel.INSTANCE.findLocationByKey(item_id);
+            mItem = LoginServiceFacade.getInstance().findLocationByKey(item_id);
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
