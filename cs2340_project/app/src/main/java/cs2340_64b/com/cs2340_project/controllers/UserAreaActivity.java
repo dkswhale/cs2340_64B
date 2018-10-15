@@ -72,9 +72,7 @@ public class UserAreaActivity extends AppCompatActivity {
                 int key = Integer.parseInt(tokens[0]);
                 long la = Long.parseLong(tokens[2]);
                 long lo = Long.parseLong(tokens[3]);
-                int zip = Integer.parseInt(tokens[7]);
-                model.addLocation(new Location(key, tokens[NAME_POSITION], la, lo, tokens[4], tokens[5],
-                        tokens[6], zip, tokens[8], tokens[9], tokens[10]));
+                model.addLocation(new Location(key, tokens[NAME_POSITION], la, lo, tokens[4], tokens[8], tokens[9]));
             }
             br.close();
         } catch (IOException e) {
