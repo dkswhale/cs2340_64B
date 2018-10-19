@@ -31,8 +31,8 @@
             android:name=".controllers.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".controllers.LocationListActivity" />
-        <activity android:name=".controllers.LocationDetailActivity"></activity>
+        <activity android:name=".controllers.LocationDetailActivity" />
+        <activity android:name=".controllers.LocationActivity"></activity>
     </application>
 
 </manifest>

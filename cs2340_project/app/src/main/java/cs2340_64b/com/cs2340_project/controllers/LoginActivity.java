@@ -10,9 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import cs2340_64b.com.cs2340_project.controllers.UserAreaActivity;
 import cs2340_64b.com.cs2340_project.R;
-import cs2340_64b.com.cs2340_project.model.LoginServiceFacade;
+import cs2340_64b.com.cs2340_project.model.UserManager;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,8 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText passwordField = findViewById(R.id.password);
         TextView error = findViewById(R.id.error_text);
         error.setText("");
-        LoginServiceFacade model = LoginServiceFacade.getInstance();
-        if (model.doLogin(usernameField.getText().toString(), passwordField.getText().toString())) {
+        if (UserManager.signIn(usernameField.getText().toString(), passwordField.getText().toString())) {
             Intent intent = new Intent(this, UserAreaActivity.class);
             startActivity(intent);
         } else {

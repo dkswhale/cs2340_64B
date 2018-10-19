@@ -1,10 +1,7 @@
 package cs2340_64b.com.cs2340_project.controllers;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.UserManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,17 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-
 import cs2340_64b.com.cs2340_project.R;
-import cs2340_64b.com.cs2340_project.controllers.LoginActivity;
-import cs2340_64b.com.cs2340_project.controllers.RegisterActivity;
-import cs2340_64b.com.cs2340_project.model.Location;
-import cs2340_64b.com.cs2340_project.model.LoginServiceFacade;
 
 public class OpeningActivity extends AppCompatActivity {
 

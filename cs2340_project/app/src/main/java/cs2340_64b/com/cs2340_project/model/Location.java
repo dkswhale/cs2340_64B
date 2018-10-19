@@ -1,15 +1,18 @@
 package cs2340_64b.com.cs2340_project.model;
 
-public class Location {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Location implements Parcelable {
     private int key;
     private String name;
-    private long latitude;
-    private long longitude;
+    private Double latitude;
+    private Double longitude;
     private String address;
-    private String type;
+    private Type type;
     private String phone;
 
-    public Location(int k, String n, long la, long lo, String a, String t, String p) {
+    public Location(int k, String n, Double la, Double lo, String a, Type t, String p) {
         key = k;
         name = n;
         latitude = la;
@@ -18,6 +21,44 @@ public class Location {
         type = t;
         phone = p;
     }
+
+    protected Location(Parcel in) {
+        key = in.readInt();
+        name = in.readString();
+        latitude = in.readDouble();
+        longitude = in.readDouble();
+        address = in.readString();
+        type = (Type) in.readSerializable();
+        phone = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(key);
+        dest.writeString(name);
+        dest.writeDouble(latitude);
+        dest.writeDouble(longitude);
+        dest.writeString(address);
+        dest.writeSerializable(type);
+        dest.writeString(phone);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Location> CREATOR = new Creator<Location>() {
+        @Override
+        public Location createFromParcel(Parcel source) {
+            return new Location(source);
+        }
+
+        @Override
+        public Location[] newArray(int size) {
+            return new Location[size];
+        }
+    };
 
     public String toString() {
         return name;
@@ -31,11 +72,11 @@ public class Location {
         return name;
     }
 
-    public long getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public long getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
@@ -43,7 +84,7 @@ public class Location {
         return address;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 

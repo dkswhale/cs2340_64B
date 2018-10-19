@@ -13,10 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import cs2340_64b.com.cs2340_project.R;
-import cs2340_64b.com.cs2340_project.model.LoginServiceFacade;
 import cs2340_64b.com.cs2340_project.model.UserManager;
 import cs2340_64b.com.cs2340_project.model.UserRights;
-import cs2340_64b.com.cs2340_project.controllers.LoginActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -58,15 +56,15 @@ public class RegisterActivity extends AppCompatActivity {
         error = findViewById(R.id.error_text_reg);
         error.setText("");
 
-        LoginServiceFacade model = LoginServiceFacade.getInstance();
-
         String username = usernameField.getText().toString();
         String password = passwordField.getText().toString();
         String name = nameField.getText().toString();
         UserRights type = (UserRights) typeSpinner.getSelectedItem();
 
-        if (model.addNewUser(username, password, name, type)) {
-            Intent intent = new Intent(this, LoginActivity.class);
+
+
+        if (UserManager.registerUser(username, password, name, type)) {
+            Intent intent = new Intent(this, UserAreaActivity.class);
             startActivity(intent);
         } else {
             usernameField.setText("");

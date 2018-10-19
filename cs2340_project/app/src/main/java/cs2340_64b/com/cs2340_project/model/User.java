@@ -13,11 +13,19 @@ public class User {
         _rights = rights;
     }
 
-    public boolean checkPassword(String pass) {
-        return _password.equals(pass);
-    }
-
     public String getName() {
         return _name;
+    }
+
+    public String getUsername() {
+        return _username;
+    }
+
+    public String getPassword() {
+        return _password;
+    }
+
+    public UserRights getRights() {
+        return _rights;
     }
 }

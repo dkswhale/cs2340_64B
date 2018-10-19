@@ -7,7 +7,7 @@ public enum UserRights {
 
     private String _type;
 
-    private UserRights(String type) {
+    UserRights(String type) {
         _type = type;
     }
 

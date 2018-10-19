@@ -1,32 +1,46 @@
 package cs2340_64b.com.cs2340_project.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UserManager {
-    private Map<String, User> _users;
+    private static ArrayList<User> users = new ArrayList<>();
 
-    public UserManager() {
-        _users = new HashMap<>();
+    private static User currentUser = null;
+
+    public static boolean signIn(String username, String password) {
+        for (User check : users) {
+            boolean approve = check.getUsername().equals(username)
+                    && check.getPassword().equals(password);
+            if (approve) {
+                currentUser = check;
+                return true;
+            }
+        }
+        return false;
     }
 
-    public boolean addUser(String username, String password, String name, UserRights rights) {
-        User user = new User(username, password, name, rights);
-        if (_users.containsKey(username)) {
-            return false;
+    public static boolean registerUser(String name, String usern, String pass, UserRights ur) {
+        User newUser = new User(name, usern, pass, ur);
+        boolean exist = false;
+        for (User check : users) {
+            if (check.getUsername().equals(usern)) {
+                exist = true;
+                return false;
+            }
         }
-        _users.put(username, user);
+        users.add(newUser);
+        currentUser = newUser;
         return true;
     }
 
-    public User checkLogin(String username, String password) {
-        User user = null;
-        if (_users.containsKey(username)) {
-            user = _users.get(username);
-            if (user.checkPassword(password)) {
-                return user;
-            }
-        }
-        return null;
+    public static void signOut() {
+        currentUser = null;
     }
+
+    public static User getCurrentUser() {
+        return currentUser;
+    }
+
 }
