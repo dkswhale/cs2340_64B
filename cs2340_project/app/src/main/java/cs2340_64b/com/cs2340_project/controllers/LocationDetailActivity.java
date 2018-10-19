@@ -14,21 +14,14 @@ public class LocationDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_detail);
 
-        System.out.println("a");
         Location location = (Location) getIntent().getExtras().get("location");
-        System.out.println("b");
         TextView key = findViewById(R.id.key);
         TextView name = findViewById(R.id.name);
-        System.out.println("c");
         TextView la = findViewById(R.id.latitude);
         TextView lo = findViewById(R.id.longitude);
-        System.out.println("d");
         TextView ad = findViewById(R.id.address);
-        System.out.println("e");
         TextView type = findViewById(R.id.type);
-        System.out.println("f");
         TextView phone = findViewById(R.id.phonenumber);
-        System.out.println("g");
 
         key.setText("Key: " + String.valueOf(location.getKey()));
         name.setText("Name: " + location.getName());
