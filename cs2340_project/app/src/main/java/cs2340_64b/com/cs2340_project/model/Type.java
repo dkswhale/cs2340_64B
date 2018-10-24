@@ -13,7 +13,7 @@ public enum Type {
             case WAREHOUSE:
                 return "Warehouse";
             default:
-                return "whatever";
+                return "else";
         }
     }
 

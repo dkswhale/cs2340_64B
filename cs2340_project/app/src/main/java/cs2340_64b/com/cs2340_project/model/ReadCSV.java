@@ -17,12 +17,10 @@ public class ReadCSV {
     public List file() {
         List locationList = new ArrayList();
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
-        System.out.println("l");
         try {
             String line;
             br.readLine();
             while ((line = br.readLine()) != null) {
-                System.out.println("m");
                 String[] location = line.split(",");
                 locationList.add(location);
             }
@@ -35,7 +33,6 @@ public class ReadCSV {
                 throw new RuntimeException("Connot close input stream: " + io);
             }
         }
-        System.out.println("n");
         return locationList;
     }
 }

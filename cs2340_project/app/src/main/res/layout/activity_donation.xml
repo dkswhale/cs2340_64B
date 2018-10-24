@@ -5,16 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controllers.LocationActivity">
-    
+    tools:context=".controllers.DonationActivity">
+
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
         <fragment
-            android:name="cs2340_64b.com.cs2340_project.controllers.LocationFragment"
-            android:id="@+id/headlines_fragment"
+            android:name="cs2340_64b.com.cs2340_project.controllers.DonationFragment"
+            android:id="@+id/head_fragment"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent" />

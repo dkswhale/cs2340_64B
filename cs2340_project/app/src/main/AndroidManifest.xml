@@ -32,7 +32,10 @@
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".controllers.LocationDetailActivity" />
-        <activity android:name=".controllers.LocationActivity"></activity>
+        <activity android:name=".controllers.LocationActivity" />
+        <activity android:name=".controllers.DonateActivity" />
+        <activity android:name=".controllers.DonationActivity" />
+        <activity android:name=".controllers.DonationDetailActivity"></activity>
     </application>
 
 </manifest>
