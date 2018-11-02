@@ -47,10 +47,10 @@ public class DonateActivity extends AppCompatActivity {
         error = findViewById(R.id.errorText);
         error.setText("");
 
-        int value = Integer.parseInt(valueField.getText().toString());
+        Double value = Double.parseDouble(valueField.getText().toString());
         String shortD = shortDField.getText().toString();
         String fullD = fullDField.getText().toString();
-        DonationCategory category = (DonationCategory) categorySpinner.getSelectedItem();
+        DonationCategory category = DonationCategory.donationCategory(categorySpinner.getSelectedItem().toString());
 
         if (DonationManager.doDonate(shortD, fullD, value, category)) {
             Intent intent = new Intent(this, UserAreaActivity.class);

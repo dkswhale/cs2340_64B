@@ -45,9 +45,7 @@ public class LocationDetailActivity extends AppCompatActivity {
     }
 
     public void onViewDonationPressed(View view) {
-        if (UserManager.getCurrentUser().getRights() == UserRights.LOCATION_EMPLOYEE) {
-            Intent intent = new Intent(this, DonationActivity.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(this, DonationActivity.class);
+        startActivity(intent);
     }
 }

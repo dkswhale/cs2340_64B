@@ -41,4 +41,9 @@ public class UserAreaActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onSearchButtonPresed(View view) {
+        Intent intent = new Intent(this, SearchActivity.class);
+        startActivity(intent);
+    }
+
 }

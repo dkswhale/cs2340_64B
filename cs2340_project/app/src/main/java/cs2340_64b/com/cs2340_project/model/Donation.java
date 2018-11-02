@@ -10,7 +10,7 @@ public class Donation implements Parcelable {
     private Date time;
     private String shortDescription;
     private String fullDescription;
-    private int value;
+    private Double value;
     private DonationCategory category;
 
     public Donation(String location) {
@@ -18,12 +18,12 @@ public class Donation implements Parcelable {
         time = null;
         shortDescription = null;
         fullDescription = null;
-        value = 0;
+        value = null;
         category = null;
     }
 
     public Donation(String location, Date time, String shortDescription,
-                    String fullDescription, int value, DonationCategory category) {
+                    String fullDescription, Double value, DonationCategory category) {
         this.location = location;
         this.time = time;
         this.shortDescription = shortDescription;
@@ -37,7 +37,7 @@ public class Donation implements Parcelable {
         time = (Date) in.readSerializable();
         shortDescription = in.readString();
         fullDescription = in.readString();
-        value = in.readInt();
+        value = in.readDouble();
         category = (DonationCategory) in.readSerializable();
     }
 
@@ -47,7 +47,7 @@ public class Donation implements Parcelable {
         dest.writeSerializable(time);
         dest.writeString(shortDescription);
         dest.writeString(fullDescription);
-        dest.writeInt(value);
+        dest.writeDouble(value);
         dest.writeSerializable(category);
     }
 
@@ -84,7 +84,7 @@ public class Donation implements Parcelable {
         return fullDescription;
     }
 
-    public int getValue() {
+    public Double getValue() {
         return value;
     }
 
@@ -108,7 +108,7 @@ public class Donation implements Parcelable {
         this.fullDescription = fullDescription;
     }
 
-    public void setValue(int value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 

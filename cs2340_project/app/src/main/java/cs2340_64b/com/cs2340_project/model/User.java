@@ -1,31 +1,31 @@
 package cs2340_64b.com.cs2340_project.model;
 
 public class User {
-    private String _username;
-    private String _password;
-    private String _name;
-    private UserRights _rights;
+    private String username;
+    private String password;
+    private String name;
+    private UserRights rights;
 
     public User(String uid, String pass, String name, UserRights rights) {
-        _username = uid;
-        _password = pass;
-        _name = name;
-        _rights = rights;
+        username = uid;
+        password = pass;
+        this.name = name;
+        this.rights = rights;
     }
 
     public String getName() {
-        return _name;
+        return name;
     }
 
     public String getUsername() {
-        return _username;
+        return username;
     }
 
     public String getPassword() {
-        return _password;
+        return password;
     }
 
     public UserRights getRights() {
-        return _rights;
+        return rights;
     }
 }

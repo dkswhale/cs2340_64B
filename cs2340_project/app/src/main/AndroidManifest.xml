@@ -35,7 +35,8 @@
         <activity android:name=".controllers.LocationActivity" />
         <activity android:name=".controllers.DonateActivity" />
         <activity android:name=".controllers.DonationActivity" />
-        <activity android:name=".controllers.DonationDetailActivity"></activity>
+        <activity android:name=".controllers.DonationDetailActivity" />
+        <activity android:name=".controllers.SearchActivity"></activity>
     </application>
 
 </manifest>

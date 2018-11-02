@@ -1,6 +1,7 @@
 package cs2340_64b.com.cs2340_project.controllers;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import cs2340_64b.com.cs2340_project.R;
+import cs2340_64b.com.cs2340_project.model.DonationManager;
 import cs2340_64b.com.cs2340_project.model.UserManager;
 import cs2340_64b.com.cs2340_project.model.UserRights;
 
@@ -59,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         String username = usernameField.getText().toString();
         String password = passwordField.getText().toString();
         String name = nameField.getText().toString();
-        UserRights type = (UserRights) typeSpinner.getSelectedItem();
+        UserRights type = UserRights.userRights(typeSpinner.getSelectedItem().toString());
 
 
 

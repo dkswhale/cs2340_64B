@@ -1,6 +1,7 @@
 package cs2340_64b.com.cs2340_project.controllers;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,7 +11,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.InputStream;
+
 import cs2340_64b.com.cs2340_project.R;
+import cs2340_64b.com.cs2340_project.model.DonationManager;
+import cs2340_64b.com.cs2340_project.model.UserManager;
 
 public class OpeningActivity extends AppCompatActivity {
 
@@ -29,6 +34,11 @@ public class OpeningActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        SharedPreferences pref = getPreferences(MODE_PRIVATE);
+        UserManager.initialize(pref);
+        InputStream inputStream = getResources().openRawResource(R.raw.location_data);
+        DonationManager.initialize(pref, inputStream);
     }
 
     @Override
