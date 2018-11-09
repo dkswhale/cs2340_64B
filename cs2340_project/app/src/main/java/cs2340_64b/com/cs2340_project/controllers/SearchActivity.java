@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import cs2340_64b.com.cs2340_project.R;
+import cs2340_64b.com.cs2340_project.controllers.dummy.DummyDonation;
 import cs2340_64b.com.cs2340_project.model.Donation;
 import cs2340_64b.com.cs2340_project.model.DonationCategory;
 import cs2340_64b.com.cs2340_project.model.DonationManager;
@@ -25,6 +26,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        DummyDonation.setup(DonationManager.getDonations());
 
         overall = findViewById(R.id.spinnerOverall);
         String[] over = {"Search All Locations", "AFD Station 4", "BOYS & GILRS CLUB W.W. WOOLFOLK",
@@ -109,24 +111,48 @@ public class SearchActivity extends AppCompatActivity {
                 }
             }
         } else {
-            for (int i = 0; i < don.size(); i++) {
-                if (category.getSelectedItem().equals(don.get(i).getCategory())) {
-                    if (counter == 0) {
-                        a.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
-                    } else if (counter == 1) {
-                        b.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
-                    } else if (counter == 2) {
-                        c.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
-                    } else if (counter == 3) {
-                        d.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
-                    } else if (counter == 4) {
-                        e.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
-                    } else if (counter == 5) {
-                        f.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+            if (overall.getSelectedItem() == "Search All Locations") {
+                for (int i = 0; i < don.size(); i++) {
+                    if (category.getSelectedItem().equals(don.get(i).getCategory())) {
+                        if (counter == 0) {
+                            a.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                        } else if (counter == 1) {
+                            b.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                        } else if (counter == 2) {
+                            c.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                        } else if (counter == 3) {
+                            d.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                        } else if (counter == 4) {
+                            e.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                        } else if (counter == 5) {
+                            f.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                        }
+                        counter++;
                     }
-                    counter++;
+                }
+            } else {
+                for (int i = 0; i < don.size(); i++) {
+                    if (overall.getSelectedItem().equals(don.get(i).getLocation())) {
+                        if (category.getSelectedItem().equals(don.get(i).getCategory())) {
+                            if (counter == 0) {
+                                a.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                            } else if (counter == 1) {
+                                b.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                            } else if (counter == 2) {
+                                c.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                            } else if (counter == 3) {
+                                d.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                            } else if (counter == 4) {
+                                e.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                            } else if (counter == 5) {
+                                f.setText("$" + don.get(i).getValue() + "   " + don.get(i).getShortDescription() + "   " + don.get(i).getCategory());
+                            }
+                            counter++;
+                        }
+                    }
                 }
             }
+
         }
         if (counter == 0) {
             a.setText("There are no matching results");

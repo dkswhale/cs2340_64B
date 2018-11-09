@@ -41,8 +41,13 @@ public class UserAreaActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onSearchButtonPresed(View view) {
+    public void onSearchButtonPressed(View view) {
         Intent intent = new Intent(this, SearchActivity.class);
+        startActivity(intent);
+    }
+
+    public void onMapsButtonPressed(View view) {
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 

@@ -57,10 +57,8 @@ public class UserManager {
 
     public static boolean registerUser(String name, String usern, String pass, UserRights ur) {
         User newUser = new User(name, usern, pass, ur);
-        boolean exist = false;
         for (User check : users) {
             if (check.getUsername().equals(usern)) {
-                exist = true;
                 return false;
             }
         }

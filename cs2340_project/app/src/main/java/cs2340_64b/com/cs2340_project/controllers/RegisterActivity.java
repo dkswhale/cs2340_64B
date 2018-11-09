@@ -51,7 +51,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void onRegisterPressed_reg(View view) {
-        UserManager userManager = new UserManager();
         usernameField = findViewById(R.id.username_reg);
         passwordField = findViewById(R.id.password_reg);
         nameField = findViewById(R.id.name_reg);
