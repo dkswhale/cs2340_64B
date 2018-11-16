@@ -9,8 +9,6 @@ import android.widget.TextView;
 import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.DonationManager;
 import cs2340_64b.com.cs2340_project.model.Location;
-import cs2340_64b.com.cs2340_project.model.UserManager;
-import cs2340_64b.com.cs2340_project.model.UserRights;
 
 public class LocationDetailActivity extends AppCompatActivity {
 
@@ -29,14 +27,19 @@ public class LocationDetailActivity extends AppCompatActivity {
         TextView type = findViewById(R.id.type);
         TextView phone = findViewById(R.id.phonenumber);
 
-        name.setText("Name: " + location.getName());
-        la.setText("Latitue: " + String.valueOf(location.getLatitude()));
-        lo.setText("Longitude: " + String.valueOf(location.getLongitude()));
-        ad.setText("Address: " + location.getAddress());
-        type.setText("Type: " + String.valueOf(location.getType()));
-        phone.setText("Phone Number: " + location.getPhone());
+        name.setText(location.getName());
+        la.setText(String.valueOf(location.getLatitude()));
+        lo.setText(String.valueOf(location.getLongitude()));
+        ad.setText(location.getAddress());
+        type.setText(String.valueOf(location.getType()));
+        phone.setText(location.getPhone());
     }
 
+    /**
+     * Adds the donation to the list of current donations
+     *
+     * @param view the current view being displayed
+     */
     public void onDonatePressed(View view) {
         if (DonationManager.addLocation(location.getName())) {
             Intent intent = new Intent(this, DonateActivity.class);
@@ -44,6 +47,11 @@ public class LocationDetailActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Changes the display to show the donations
+     *
+     * @param view the current view being displayed
+     */
     public void onViewDonationPressed(View view) {
         Intent intent = new Intent(this, DonationActivity.class);
         startActivity(intent);

@@ -1,5 +1,7 @@
 package cs2340_64b.com.cs2340_project.controllers.dummy;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +14,7 @@ public class DummyDonation {
 
     public static final List<DummyDon> ITEMS = new ArrayList<>();
 
-    public static final Map<String, DummyDon> ITEM_MAP = new HashMap<>();
+    private static final Map<String, DummyDon> ITEM_MAP = new HashMap<>();
 
     public static void setup(ArrayList<Donation> donations) {
         clearOut();
@@ -36,11 +38,12 @@ public class DummyDonation {
         public final String id;
         public final Donation donation;
 
-        public DummyDon(Donation donation) {
+        DummyDon(Donation donation) {
             this.id = String.valueOf(donation.getValue());
             this.donation = donation;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return donation.getShortDescription();

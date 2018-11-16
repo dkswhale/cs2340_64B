@@ -49,6 +49,11 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Searches data when search button pressed
+     *
+     * @param view current view of search screen
+     */
     public void onSearchFinalPressed(View view) {
         TextView text = findViewById(R.id.nameToSearch);
         String searchName = text.getText().toString();
@@ -155,7 +160,7 @@ public class SearchActivity extends AppCompatActivity {
 
         }
         if (counter == 0) {
-            a.setText("There are no matching results");
+            a.setText(R.string.errorMessage_search);
         } else if (counter >= 6) {
             results.setText("+ " + (counter - 5) + " More results");
         }

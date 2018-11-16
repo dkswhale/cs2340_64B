@@ -14,10 +14,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="64dp"
         android:ems="10"
-        android:hint="Name to Search"
+        android:hint="@string/nameToSearch"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="@string/nameToSearch"
+        tools:targetApi="o" />
 
     <Button
         android:id="@+id/searchFinal"
@@ -27,7 +29,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="64dp"
         android:onClick="onSearchFinalPressed"
-        android:text="SEARCH"
+        android:text="@string/searchFinal"
         app:layout_constraintStart_toEndOf="@+id/nameToSearch"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,8 +48,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="@+id/results"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerSearch"
@@ -66,7 +68,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
-        android:text="Search By:"
+        android:text="@string/textView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameToSearch" />
 
@@ -77,7 +79,7 @@
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
         android:layout_marginTop="24dp"
-        android:text="Category"
+        android:text="@string/textView3"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/nameToSearch" />
 

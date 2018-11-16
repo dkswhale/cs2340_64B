@@ -1,5 +1,6 @@
 package cs2340_64b.com.cs2340_project.model;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,12 +19,18 @@ public class DonationRecyclerViewAdapter extends RecyclerView.Adapter<DonationRe
     private final List<DummyDon> mDonations;
     private final OnListFragmentInteractionListener mListener;
 
+    /**
+     * This sets the listener and sets donation
+     * @param items - items in donation
+     * @param listener - something that listens to donations
+     */
     public DonationRecyclerViewAdapter(List<DummyDon> items,
                                        DonationFragment.OnListFragmentInteractionListener listener) {
         mDonations = items;
         mListener = listener;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -53,16 +60,20 @@ public class DonationRecyclerViewAdapter extends RecyclerView.Adapter<DonationRe
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyDon mDonation;
+        final View mView;
+        final TextView mIdView;
+        final TextView mContentView;
+        DummyDon mDonation;
 
-        public ViewHolder(View view) {
+        /**
+         * this is the view holder of the donation
+         * @param view - this views the donations and it's holder
+         */
+        ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.itemDescription);
-            mContentView = (TextView) view.findViewById(R.id.itemValue);
+            mIdView = view.findViewById(R.id.itemDescription);
+            mContentView = view.findViewById(R.id.itemValue);
         }
 
         @Override

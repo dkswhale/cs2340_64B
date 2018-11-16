@@ -23,10 +23,10 @@ public class OpeningActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opening);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,11 +63,21 @@ public class OpeningActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Opens log-in page when log-in button is pressed
+     *
+     * @param view the current view of the opening screen
+     */
     public void onLoginPressed(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Opens register page when register button is pressed
+     *
+     * @param view the current view of the opening screen
+     */
     public void onRegisterPressed(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);

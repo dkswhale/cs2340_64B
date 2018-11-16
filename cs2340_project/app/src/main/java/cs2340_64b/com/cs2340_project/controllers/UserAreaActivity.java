@@ -18,9 +18,9 @@ public class UserAreaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,22 +30,42 @@ public class UserAreaActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * logs out user when log out button pressed
+     *
+     * @param view current view
+     */
     public void onLogoutPressed(View view) {
         UserManager.signOut();
         Intent intent = new Intent(this, OpeningActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Re-loads page when load button pressed
+     *
+     * @param view current view
+     */
     public void onLoadButtonPressed(View view) {
         Intent intent = new Intent(this, LocationActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Goes to search page when search button pressed
+     *
+     * @param view current view
+     */
     public void onSearchButtonPressed(View view) {
         Intent intent = new Intent(this, SearchActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Goes to Map page when maps button pressed
+     *
+     * @param view current view
+     */
     public void onMapsButtonPressed(View view) {
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);

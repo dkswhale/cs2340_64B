@@ -1,5 +1,7 @@
 package cs2340_64b.com.cs2340_project.controllers.dummy;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +15,7 @@ public class DummyContent {
 
     public static final List<DummyItem> ITEMS = new ArrayList<>();
 
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<>();
+    private static final Map<String, DummyItem> ITEM_MAP = new HashMap<>();
 
     public static void setup(ArrayList<Location> locations) {
         clearOut();
@@ -37,11 +39,12 @@ public class DummyContent {
         public final String id;
         public final Location location;
 
-        public DummyItem(Location location) {
+        DummyItem(Location location) {
             this.id = String.valueOf(location.getKey());
             this.location = location;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return location.getName();

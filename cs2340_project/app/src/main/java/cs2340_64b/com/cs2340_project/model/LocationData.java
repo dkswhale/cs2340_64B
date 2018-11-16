@@ -5,8 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LocationData {
-    private static ArrayList<Location> locations = new ArrayList<>();
+    private static final ArrayList<Location> locations = new ArrayList<>();
 
+    /**
+     * this is getting all the location and adding them to stream
+     * @param inputStream - stream of location
+     */
     public LocationData(InputStream inputStream) {
         if (locations.isEmpty()) {
             ReadCSV read = new ReadCSV(inputStream);
@@ -22,6 +26,10 @@ public class LocationData {
         }
     }
 
+    /**
+     * this is dealing with the array list of location
+     * @return locations - this is locations of donation
+     */
     public static ArrayList<Location> getLocations() {
         return locations;
     }

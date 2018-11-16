@@ -1,5 +1,8 @@
 package cs2340_64b.com.cs2340_project.model;
 
+/**
+ * this is an enum of all the donation categories
+ */
 public enum DonationCategory {
 
     CLOTHING,
@@ -9,6 +12,10 @@ public enum DonationCategory {
     HOUSEHOLD,
     OTHER;
 
+    /**
+     * This is returning a string of the corresponding case
+     * @return - returning type/category of donation
+     */
     public String toString() {
         switch (this) {
             case CLOTHING:
@@ -28,6 +35,11 @@ public enum DonationCategory {
         }
     }
 
+    /**
+     * This is taking that donation category
+     * @param string - the string that is passed in
+     * @return the type/category of donation
+     */
     public static DonationCategory donationCategory(String string) {
         switch (string) {
             case "Clothing":

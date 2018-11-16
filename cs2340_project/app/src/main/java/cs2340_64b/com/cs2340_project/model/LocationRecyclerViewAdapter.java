@@ -1,5 +1,6 @@
 package cs2340_64b.com.cs2340_project.model;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,12 +17,18 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
     private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
+    /**
+     * this is recyling the view adapter
+     * @param items - items of the adapter
+     * @param listener - adapter listener
+     */
     public LocationRecyclerViewAdapter(List<DummyItem> items,
                            OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -51,16 +58,20 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        final View mView;
+        final TextView mIdView;
+        final TextView mContentView;
+        DummyItem mItem;
 
-        public ViewHolder(View view) {
+        /**
+         * this is the view holder that views the location
+         * @param view - the view of location
+         */
+        ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.contents);
+            mIdView = view.findViewById(R.id.item_number);
+            mContentView = view.findViewById(R.id.contents);
         }
 
         @Override

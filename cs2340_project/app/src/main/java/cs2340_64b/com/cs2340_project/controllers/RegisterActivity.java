@@ -1,7 +1,6 @@
 package cs2340_64b.com.cs2340_project.controllers;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,26 +13,21 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import cs2340_64b.com.cs2340_project.R;
-import cs2340_64b.com.cs2340_project.model.DonationManager;
 import cs2340_64b.com.cs2340_project.model.UserManager;
 import cs2340_64b.com.cs2340_project.model.UserRights;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText usernameField;
-    private EditText passwordField;
-    private EditText nameField;
     private Spinner typeSpinner;
-    private TextView error;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,11 +44,16 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Creates a new user when one registers
+     *
+     * @param view the register page view with all fields filled in
+     */
     public void onRegisterPressed_reg(View view) {
-        usernameField = findViewById(R.id.username_reg);
-        passwordField = findViewById(R.id.password_reg);
-        nameField = findViewById(R.id.name_reg);
-        error = findViewById(R.id.error_text_reg);
+        EditText usernameField = findViewById(R.id.username_reg);
+        EditText passwordField = findViewById(R.id.password_reg);
+        EditText nameField = findViewById(R.id.name_reg);
+        TextView error = findViewById(R.id.error_text_reg);
         error.setText("");
 
         String username = usernameField.getText().toString();
@@ -71,13 +70,18 @@ public class RegisterActivity extends AppCompatActivity {
             usernameField.setText("");
             passwordField.setText("");
             nameField.setText("");
-            error.setText("Username already exists. Try again");
+            error.setText(R.string.errorMessage_register);
         }
 
 
 
     }
 
+    /**
+     * Cancels action when cancel button is pressed
+     *
+     * @param view the current view of the register page
+     */
     public void onCancelPressed_reg(View view) {
         finish();
     }

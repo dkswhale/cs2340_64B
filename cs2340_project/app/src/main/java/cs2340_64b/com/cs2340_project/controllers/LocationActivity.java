@@ -3,7 +3,6 @@ package cs2340_64b.com.cs2340_project.controllers;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 import java.io.InputStream;
 
@@ -21,8 +20,8 @@ public class LocationActivity extends AppCompatActivity implements LocationFragm
         setContentView(R.layout.activity_location);
 
         InputStream inputStream = getResources().openRawResource(R.raw.location_data);
-        LocationData data = new LocationData(inputStream);
-        DummyContent.setup(data.getLocations());
+        @SuppressWarnings("unused") LocationData data = new LocationData(inputStream);
+        DummyContent.setup(LocationData.getLocations());
 
     }
 

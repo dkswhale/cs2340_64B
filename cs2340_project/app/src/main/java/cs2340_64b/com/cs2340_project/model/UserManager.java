@@ -7,17 +7,27 @@ import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.ArrayList;
 
+/**
+ * UserManager Class
+ */
 public class UserManager {
-    private static ArrayList<User> users = new ArrayList<>();
+    private static final ArrayList<User> users = new ArrayList<>();
     private static User currentUser = null;
     private static Boolean isLoaded = false;
     private static SharedPreferences pref;
 
+    /**
+     * Initializes preferences
+     * @param pref the input SharedPreferences to initialize
+     */
     public static void initialize(SharedPreferences pref) {
         UserManager.pref = pref;
         load();
     }
 
+    /**
+     * load user information username and password
+     */
     private static void load() {
         if (isLoaded) {
             return;
@@ -35,14 +45,23 @@ public class UserManager {
         }
     }
 
+    /**
+     * saves the user information
+     */
     private static void save() {
         SharedPreferences.Editor editor = pref.edit();
         Gson gson = new Gson();
         String usersJson = gson.toJson(users);
         editor.putString("users", usersJson);
-        editor.commit();
+        editor.apply();
     }
 
+    /**
+     *
+     * @param username username of the user
+     * @param password password of the user
+     * @return true if signed in, false if not
+     */
     public static boolean signIn(String username, String password) {
         for (User check : users) {
             boolean approve = check.getUsername().equals(username)
@@ -55,6 +74,14 @@ public class UserManager {
         return false;
     }
 
+    /**
+     *
+     * @param name name of user
+     * @param usern username of user
+     * @param pass password of user
+     * @param ur type of userRight
+     * @return returns true if user is registered, false if not
+     */
     public static boolean registerUser(String name, String usern, String pass, UserRights ur) {
         User newUser = new User(name, usern, pass, ur);
         for (User check : users) {
@@ -68,10 +95,17 @@ public class UserManager {
         return true;
     }
 
+    /**
+     * handles signout, if user is signed out then current user is null
+     */
     public static void signOut() {
         currentUser = null;
     }
 
+    /**
+     * Gets current user info
+     * @return currentUser info
+     */
     public static User getCurrentUser() {
         return currentUser;
     }

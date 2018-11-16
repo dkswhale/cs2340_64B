@@ -19,10 +19,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +32,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * When sign in is pressed, either sign the user in, or return an error
+     *
+     * @param view the current view of the login screen with the username
+     * and password fields filled in
+     */
     public void onSignInPressed(View view) {
         EditText usernameField = findViewById(R.id.username);
         EditText passwordField = findViewById(R.id.password);
@@ -43,11 +49,16 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             usernameField.setText("");
             passwordField.setText("");
-            error.setText("Invalid username or password Try again");
+            error.setText(R.string.errorMessage_signin);
         }
 
     }
 
+    /**
+     * When cancel is pressed, cancel the login activity
+     *
+     * @param view the current view of the login screen
+     */
     public void onCancelPressed(View view) {
         Intent intent = new Intent(this, OpeningActivity.class);
         startActivity(intent);

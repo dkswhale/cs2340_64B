@@ -7,13 +7,25 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadCSV {
-    private InputStream inputStream;
+/**
+ * Reads CSV file that stores info
+ */
+class ReadCSV {
+    private final InputStream inputStream;
 
+    /**
+     * Constructor for ReadCVS
+     * @param inputStream stream of data
+     */
     public ReadCSV(InputStream inputStream) {
         this.inputStream = inputStream;
     }
 
+    /**
+     * Reads CVS file
+     * @return locationList, which is list of donation locations
+     */
+    @SuppressWarnings("ThrowFromFinallyBlock")
     public List file() {
         List locationList = new ArrayList();
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
@@ -30,7 +42,7 @@ public class ReadCSV {
             try {
                 inputStream.close();
             } catch (IOException io) {
-                throw new RuntimeException("Connot close input stream: " + io);
+                throw new RuntimeException("Cannot close input stream: " + io);
             }
         }
         return locationList;

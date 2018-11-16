@@ -1,6 +1,5 @@
 package cs2340_64b.com.cs2340_project.controllers;
 
-import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -16,8 +15,6 @@ import cs2340_64b.com.cs2340_project.model.Location;
 import cs2340_64b.com.cs2340_project.model.LocationData;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
-    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +38,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        GoogleMap mMap = googleMap;
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
         for (Location location : LocationData.getLocations()) {
