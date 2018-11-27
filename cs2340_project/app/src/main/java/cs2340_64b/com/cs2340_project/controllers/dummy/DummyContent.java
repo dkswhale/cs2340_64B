@@ -9,6 +9,9 @@ import java.util.Map;
 
 import cs2340_64b.com.cs2340_project.model.Location;
 
+/**
+ * handles location and list content
+ */
 
 public class DummyContent {
 
@@ -16,6 +19,11 @@ public class DummyContent {
     public static final List<DummyItem> ITEMS = new ArrayList<>();
 
     private static final Map<String, DummyItem> ITEM_MAP = new HashMap<>();
+
+    /**
+     * setting up locations and items
+     * @param locations of the donations
+     */
 
     public static void setup(ArrayList<Location> locations) {
         clearOut();

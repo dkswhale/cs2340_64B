@@ -4,6 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
+/**
+ * Handles location information inputs
+ */
+
 public class Location implements Parcelable {
     private final int key;
     private final String name;

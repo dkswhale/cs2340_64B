@@ -5,6 +5,10 @@ import android.os.Parcelable;
 
 import java.util.Date;
 
+/**
+ * handles new donation info
+ */
+
 public class Donation implements Parcelable {
     private final String location;
     private Date time;

@@ -15,6 +15,10 @@ import cs2340_64b.com.cs2340_project.model.Donation;
 import cs2340_64b.com.cs2340_project.model.DonationCategory;
 import cs2340_64b.com.cs2340_project.model.DonationManager;
 
+/**
+ * Handles search activity and data
+ */
+
 public class SearchActivity extends AppCompatActivity {
 
     private Spinner overall;

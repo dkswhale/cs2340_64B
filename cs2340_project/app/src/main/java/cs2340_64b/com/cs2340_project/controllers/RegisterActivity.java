@@ -16,6 +16,10 @@ import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.UserManager;
 import cs2340_64b.com.cs2340_project.model.UserRights;
 
+/**
+ * handles register activity and data in app
+ */
+
 public class RegisterActivity extends AppCompatActivity {
 
     private Spinner typeSpinner;

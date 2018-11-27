@@ -12,6 +12,10 @@ import cs2340_64b.com.cs2340_project.controllers.dummy.DummyContent.DummyItem;
 import cs2340_64b.com.cs2340_project.controllers.LocationFragment;
 import cs2340_64b.com.cs2340_project.model.LocationData;
 
+/**
+ * Handles location activity and info
+ */
+
 public class LocationActivity extends AppCompatActivity implements LocationFragment.OnListFragmentInteractionListener {
 
     @Override

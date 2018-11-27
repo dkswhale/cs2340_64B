@@ -9,6 +9,9 @@ import cs2340_64b.com.cs2340_project.model.UserRights;
 import static org.junit.Assert.*;
 
 public class UserManagerTest {
+    /**
+     * tester for user
+     */
 
     private User user1 = new User("Kate", "1234", "KateB", UserRights.USER);
     User user2 = new User("Tessa", "abcd", "TessaS", UserRights.ADMIN);
@@ -16,6 +19,9 @@ public class UserManagerTest {
     User user4 = new User("Gregg", "34cd", "GreggV", UserRights.USER);
     User user5 = new User("Doh", "5678", "DohY", UserRights.ADMIN);
 
+    /**
+     * tester for user registeration
+     */
 
     @Test
     public void testRegisterUser() {

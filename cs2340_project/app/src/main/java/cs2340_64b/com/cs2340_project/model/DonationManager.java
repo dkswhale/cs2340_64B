@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * handles donation information
+ */
+
 public class DonationManager {
     private static final ArrayList<Donation> donations = new ArrayList<>();
     private static Boolean isLoaded = false;

@@ -3,6 +3,8 @@ package cs2340_64b.com.cs2340_project;
 import org.junit.Before;
 import org.junit.Test;
 
+import cs2340_64b.com.cs2340_project.model.UserRights;
+
 import static cs2340_64b.com.cs2340_project.model.UserRights.userRights;
 import static junit.framework.TestCase.assertEquals;
 
@@ -17,7 +19,7 @@ public class UserRightsTest {
     }
     @Test
     public void testUserRights() {
-        assertEquals(userRights(rights), "User");
+        assertEquals(userRights(rights), UserRights.USER);
     }
 
     @Before
@@ -26,7 +28,7 @@ public class UserRightsTest {
     }
     @Test
     public void testLocationRights() {
-        assertEquals(userRights(rights), "Location Employee");
+        assertEquals(userRights(rights), UserRights.LOCATION_EMPLOYEE);
     }
 
     @Before
@@ -35,6 +37,6 @@ public class UserRightsTest {
     }
     @Test
     public void testAdminRights() {
-        assertEquals(userRights(rights), "Admin");
+        assertEquals(userRights(rights), UserRights.ADMIN);
     }
 }

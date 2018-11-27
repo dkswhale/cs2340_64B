@@ -16,11 +16,14 @@ import cs2340_64b.com.cs2340_project.controllers.dummy.DummyContent;
 import cs2340_64b.com.cs2340_project.controllers.dummy.DummyContent.DummyItem;
 import cs2340_64b.com.cs2340_project.model.LocationRecyclerViewAdapter;
 
+/**
+ * Handles location Fragments
+ */
+
 public class LocationFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
 
@@ -31,8 +34,12 @@ public class LocationFragment extends Fragment {
     public LocationFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
+    /**
+     *
+     * @param columnCount which is the count of the columns
+     * @return fragment
+     */
+
     public static LocationFragment newInstance(int columnCount) {
         LocationFragment fragment = new LocationFragment();
         Bundle args = new Bundle();
@@ -98,7 +105,11 @@ public class LocationFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
+
+        /**
+         *
+         * @param dummy content to tested
+         */
         void onListFragmentInteraction(DummyItem dummy);
     }
 }

@@ -5,7 +5,6 @@
     <string name="title_activity_user_area">UserAreaActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="title_activity_maps">Map</string>
     <string name="acceptDonate">DONATE</string>
     <string name="cancelDonate">Cancel</string>

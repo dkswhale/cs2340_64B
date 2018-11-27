@@ -14,6 +14,10 @@ import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.Location;
 import cs2340_64b.com.cs2340_project.model.LocationData;
 
+/**
+ * Handles map activity on app
+ */
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     @Override

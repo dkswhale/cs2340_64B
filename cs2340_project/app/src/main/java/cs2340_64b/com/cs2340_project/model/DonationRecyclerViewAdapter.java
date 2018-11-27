@@ -14,6 +14,10 @@ import cs2340_64b.com.cs2340_project.controllers.DonationFragment;
 import cs2340_64b.com.cs2340_project.controllers.DonationFragment.OnListFragmentInteractionListener;
 import cs2340_64b.com.cs2340_project.controllers.dummy.DummyDonation.DummyDon;
 
+/**
+ *
+ */
+
 public class DonationRecyclerViewAdapter extends RecyclerView.Adapter<DonationRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyDon> mDonations;

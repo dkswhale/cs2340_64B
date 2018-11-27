@@ -9,12 +9,21 @@ import java.util.Map;
 
 import cs2340_64b.com.cs2340_project.model.Donation;
 
+/**
+ * setting up donation items in list
+ */
+
 public class DummyDonation {
 
 
     public static final List<DummyDon> ITEMS = new ArrayList<>();
 
     private static final Map<String, DummyDon> ITEM_MAP = new HashMap<>();
+
+    /**
+     * setup donation items
+     * @param donations items
+     */
 
     public static void setup(ArrayList<Donation> donations) {
         clearOut();

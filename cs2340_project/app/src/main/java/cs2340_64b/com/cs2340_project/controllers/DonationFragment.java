@@ -16,12 +16,16 @@ import cs2340_64b.com.cs2340_project.controllers.dummy.DummyDonation;
 import cs2340_64b.com.cs2340_project.controllers.dummy.DummyDonation.DummyDon;
 import cs2340_64b.com.cs2340_project.model.DonationRecyclerViewAdapter;
 
+/**
+ * Handles Donation on screen
+ */
+
 public class DonationFragment extends Fragment {
 
 
-    // TODO: Customize parameter argument names
+
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
 
@@ -32,8 +36,13 @@ public class DonationFragment extends Fragment {
     public DonationFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
+    /**
+     *
+     * @param columnCount number of columns
+     * @return fragment
+     */
+
+
     public static DonationFragment newInstance(int columnCount) {
         DonationFragment fragment = new DonationFragment();
         Bundle args = new Bundle();
@@ -98,8 +107,14 @@ public class DonationFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
+
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
+
+        /**
+         *
+         * @param dummy for listFragment Interaction
+         */
+
         void onListFragmentInteraction(DummyDon dummy);
     }
 }

@@ -10,6 +10,10 @@ import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.DonationManager;
 import cs2340_64b.com.cs2340_project.model.Location;
 
+/**
+ * Handles location data and activity
+ */
+
 public class LocationDetailActivity extends AppCompatActivity {
 
     private Location location;

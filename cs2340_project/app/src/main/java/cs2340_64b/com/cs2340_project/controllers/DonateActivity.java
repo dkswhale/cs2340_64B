@@ -13,6 +13,10 @@ import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.DonationCategory;
 import cs2340_64b.com.cs2340_project.model.DonationManager;
 
+/**
+ * Handles donation activity in app
+ */
+
 public class DonateActivity extends AppCompatActivity {
 
     private Spinner categorySpinner;

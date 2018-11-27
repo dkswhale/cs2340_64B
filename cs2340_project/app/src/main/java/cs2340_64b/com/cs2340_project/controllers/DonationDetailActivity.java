@@ -7,6 +7,10 @@ import android.widget.TextView;
 import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.Donation;
 
+/**
+ * Handles donation detail activity
+ */
+
 public class DonationDetailActivity extends AppCompatActivity {
 
     @Override

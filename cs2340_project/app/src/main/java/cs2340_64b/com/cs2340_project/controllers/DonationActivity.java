@@ -9,6 +9,10 @@ import cs2340_64b.com.cs2340_project.controllers.dummy.DummyDonation;
 import cs2340_64b.com.cs2340_project.controllers.dummy.DummyDonation.DummyDon;
 import cs2340_64b.com.cs2340_project.model.DonationManager;
 
+/**
+ * handles donation activity and list of donations
+ */
+
 public class DonationActivity extends AppCompatActivity implements DonationFragment.OnListFragmentInteractionListener {
 
     @Override

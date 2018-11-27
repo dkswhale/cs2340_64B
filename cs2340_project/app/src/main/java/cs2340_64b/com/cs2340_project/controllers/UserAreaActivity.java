@@ -11,6 +11,10 @@ import android.view.View;
 import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.model.UserManager;
 
+/**
+ * handles user activity on app
+ */
+
 
 public class UserAreaActivity extends AppCompatActivity {
 

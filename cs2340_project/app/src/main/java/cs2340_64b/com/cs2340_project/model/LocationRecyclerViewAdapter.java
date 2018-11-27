@@ -13,6 +13,10 @@ import cs2340_64b.com.cs2340_project.R;
 import cs2340_64b.com.cs2340_project.controllers.dummy.DummyContent.DummyItem;
 import cs2340_64b.com.cs2340_project.controllers.LocationFragment.OnListFragmentInteractionListener;
 
+/**
+ * Handles location data
+ */
+
 public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRecyclerViewAdapter.ViewHolder> {
     private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
